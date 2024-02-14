@@ -11,7 +11,7 @@ class visitorApiService{
     String phoneNo
       )async {
     var client=http.Client();
-    var apiurl=Uri.parse("http://192.168.162.9:3001/api/visitor/add");
+    var apiurl=Uri.parse("http://172.16.181.241:3001/api/visitor/add");
     var response=await client.post(apiurl,
         headers: <String,String>{
           "Content-Type" : "application/json; charset=UTF-8"
@@ -39,7 +39,7 @@ class visitorApiService{
   }
   Future<List<Visitor>> viewVisitor() async{
     var client=http.Client();
-    var apiurl=Uri.parse("http://192.168.162.9:3001/api/visitor/viewall");
+    var apiurl=Uri.parse("http://172.16.181.241:3001/api/visitor/viewall");
     var response=await client.get(apiurl);
     if(response.statusCode==200)
     {

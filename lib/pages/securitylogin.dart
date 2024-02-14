@@ -111,7 +111,7 @@ class _SecurityPageState extends State<SecurityPage> {
                       ),
                       onPressed: loginsecurity, child: Text("Login")),
                 ),
-                SizedBox(height: 10,),
+                 SizedBox(height: 10,),
                 SizedBox(height: 160,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -123,7 +123,6 @@ class _SecurityPageState extends State<SecurityPage> {
                     Text("Back")
                   ],
                 )
-          
               ],
             ),
           ),

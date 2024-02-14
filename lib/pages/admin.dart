@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:securityvisitorapp/pages/admindashboard.dart';
+import 'package:securityvisitorapp/pages/menupage.dart';
 import 'package:securityvisitorapp/pages/securitylogin.dart';
 
 class AdminPage extends StatefulWidget {
@@ -19,7 +21,7 @@ class _AdminPageState extends State<AdminPage> {
     if (username == "admin" && pass == "123")
     {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => ad_dashPage()));
+          context, MaterialPageRoute(builder: (context) => menu1Page()));
     }
     else
       {
@@ -42,14 +44,19 @@ class _AdminPageState extends State<AdminPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 150,),
+                  // SizedBox(height: 150,),
+
+                  Text("ADMIN",
+                    style: TextStyle(fontWeight: FontWeight.bold),),
+                  SizedBox(height: 10,),
+
                   CircleAvatar(
                     radius: 70,
-                    backgroundImage: NetworkImage("https://www.shutterstock.com/image-vector/user-icon-vector-600nw-393536320.jpg"),
+                    // backgroundImage: NetworkImage("https://www.shutterstock.com/image-vector/user-icon-vector-600nw-393536320.jpg"),
+                    child: SvgPicture.asset("assets/bg.svg",height: 90,width: 90,),
+
                   ),
-                  SizedBox(height: 10,),
-                  Text("ADMIN",
-                  style: TextStyle(fontWeight: FontWeight.bold),),
+
                   SizedBox(height: 60,),
                   TextField(
                     controller: txt1,
