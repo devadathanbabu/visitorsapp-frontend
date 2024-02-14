@@ -7,7 +7,7 @@ class securityApiService{
       String eMail,
       String password) async{
     var client=http.Client();
-    var apiurl=Uri.parse("http://192.168.1.3:3001/api/security/signin");
+    var apiurl=Uri.parse("http://192.168.162.9:3001/api/security/signin");
     var response=await client.post(apiurl,
         headers: <String,String>{
           "Content-Type" : "application/json; charset=UTF-8"
@@ -40,7 +40,7 @@ class securityApiService{
   String eMail,
   String password) async{
     var client=http.Client();
-    var apiurl=Uri.parse("http://192.168.1.3:3001/api/security/signup");
+    var apiurl=Uri.parse("http://192.168.162.9:3001/api/security/signup");
     var response=await client.post(apiurl,
         headers: <String,String>{
           "Content-Type" : "application/json; charset=UTF-8"
@@ -69,11 +69,12 @@ class securityApiService{
   }
   Future<List<Security>> viewSecurity() async{
     var client=http.Client();
-    var apiurl=Uri.parse("http://192.168.1.3:3001/api/security/viewall");
+    var apiurl=Uri.parse("http://192.168.162.9:3001/api/security/viewall");
     var response=await client.get(apiurl);
     if(response.statusCode==200)
     {
-      return securityFromJson(response.body);
+      var resp = response.body;
+      return securityFromJson(resp);
     }
     else
     {
